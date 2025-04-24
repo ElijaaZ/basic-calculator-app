@@ -35,6 +35,7 @@ body {
   color: #29a8ff;
   background-color: #303136;
   cursor: pointer;
+  font-family: "Special Gothic Expanded One";
 }
 .btn.plus {
   height: 100px;

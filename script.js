@@ -1,5 +1,5 @@
 const buttonValues = [
-  "c",
+  "C",
   "⌫",
   "/",
   "*",
@@ -36,7 +36,7 @@ buttonValues.forEach((value) => {
       sum.textContent = total;
       display.classList.remove("large");
       display.classList.add("small");
-    } else if (value === "c") {
+    } else if (value === "C") {
       input = "";
       display.textContent = input;
       display.textContent = "0";
@@ -67,7 +67,7 @@ buttonValues.forEach((value) => {
     button.classList.add("wide");
   } else if (value === "-" || value === "*" || value === "/") {
     button.classList.add("bluebtn");
-  } else if (value === "c" || value === "⌫") {
+  } else if (value === "C" || value === "⌫") {
     button.style.backgroundColor = "#616161";
     button.style.color = "#A5A5A5";
   }
