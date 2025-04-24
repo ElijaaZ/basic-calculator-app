@@ -21,10 +21,42 @@ const buttonValues = [
 
 const buttonsContainer = document.querySelector(".buttons");
 
+let display = document.querySelector(".display");
+let sum = document.querySelector(".sum");
+let input = "";
+display.textContent = "0";
+
 buttonValues.forEach((value) => {
   const button = document.createElement("button");
   button.textContent = value;
   button.classList.add("btn");
+  button.addEventListener("click", () => {
+    if (value === "=") {
+      total = eval(input);
+      sum.textContent = total;
+      display.classList.remove("large");
+      display.classList.add("small");
+    } else if (value === "c") {
+      input = "";
+      display.textContent = input;
+      display.textContent = "0";
+      sum.textContent = "";
+      display.classList.remove("small");
+      display.classList.add("large");
+    } else if (value === "⌫") {
+      input = input.slice(0, -1);
+      display.textContent = input || 0;
+    } else {
+      if (sum.textContent) {
+        input = sum.textContent;
+        sum.textContent = "";
+        display.classList.remove("small");
+        display.classList.add("large");
+      }
+      input += value;
+      display.textContent = input;
+    }
+  });
   buttonsContainer.appendChild(button);
 
   if (value === "+") {

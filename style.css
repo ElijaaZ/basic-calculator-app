@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Special+Gothic+Expanded+One&family=Zen+Dots&display=swap");
+
 html,
 body {
   margin: 0;
+  font-family: "Special Gothic Expanded One";
   padding: 0;
   height: 100vh;
   display: flex;
@@ -22,7 +25,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 66px);
   grid-auto-rows: 66px;
-  padding: 10px;
   gap: 15px;
   padding-bottom: 50px;
 }
@@ -32,6 +34,7 @@ body {
   border-radius: 16px;
   color: #29a8ff;
   background-color: #303136;
+  cursor: pointer;
 }
 .btn.plus {
   height: 100px;
@@ -54,5 +57,28 @@ body {
 }
 .btn.bluebtn {
   background-color: #005db2;
+  color: white;
+}
+.display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25px 35px;
+}
+
+.display.small {
+  font-size: 24px;
+  color: #818181;
+}
+.display,
+.display.large {
+  font-size: 48px;
+  color: white;
+}
+.sum {
+  font-size: 48px;
   color: white;
 }
