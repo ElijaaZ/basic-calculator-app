@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Special+Gothic+Expanded+One&family=Zen+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap");
 
 html,
 body {
@@ -68,6 +68,16 @@ body {
   width: 100%;
   box-sizing: border-box;
   padding: 25px 35px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.display,
+.sum {
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: right;
+  max-width: 100%;
 }
 
 .display.small {

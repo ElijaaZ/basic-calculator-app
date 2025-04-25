@@ -21,8 +21,8 @@ const buttonValues = [
 
 const buttonsContainer = document.querySelector(".buttons");
 
-let display = document.querySelector(".display");
-let sum = document.querySelector(".sum");
+const display = document.querySelector(".display");
+const sum = document.querySelector(".sum");
 let input = "";
 display.textContent = "0";
 
@@ -32,29 +32,24 @@ buttonValues.forEach((value) => {
   button.classList.add("btn");
   button.addEventListener("click", () => {
     if (value === "=") {
-      total = eval(input);
-      sum.textContent = total;
-      display.classList.remove("large");
-      display.classList.add("small");
+      calculate();
     } else if (value === "C") {
       input = "";
-      display.textContent = input;
       display.textContent = "0";
       sum.textContent = "";
-      display.classList.remove("small");
-      display.classList.add("large");
+      displaySize("large");
     } else if (value === "⌫") {
       input = input.slice(0, -1);
-      display.textContent = input || 0;
+      display.textContent = input || "0";
     } else {
       if (sum.textContent) {
         input = sum.textContent;
         sum.textContent = "";
-        display.classList.remove("small");
-        display.classList.add("large");
+        displaySize("large");
       }
       input += value;
       display.textContent = input;
+      display.scrollLeft = display.scrollWidth;
     }
   });
   buttonsContainer.appendChild(button);
@@ -72,3 +67,15 @@ buttonValues.forEach((value) => {
     button.style.color = "#A5A5A5";
   }
 });
+
+function displaySize(size) {
+  display.classList.remove("small", "large");
+  display.classList.add(size);
+}
+
+function calculate() {
+  total = eval(input);
+  sum.textContent = total;
+  displaySize("small");
+  sum.scrollLeft = sum.scrollWidth;
+}
